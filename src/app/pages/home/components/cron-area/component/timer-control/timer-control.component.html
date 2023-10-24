@@ -1,0 +1,12 @@
+<div class="flex items-center justify-center space-x-10 mt-5">
+    <button class="font-bold rounded-full focus:outline-none hover:scale-90" (click)="resetTimer()">
+        <ng-icon class="text-4xl text-gray-100" name="bootstrapArrowClockwise"></ng-icon>
+    </button>
+    <button class="font-bold rounded-full focus:outline-none hover:scale-90" (click)="stopStartTimer()">
+        <ng-icon class="text-4xl text-gray-100" name="bootstrapPauseFill" *ngIf="status"></ng-icon>
+        <ng-icon class="text-4xl text-gray-100" name="bootstrapPlayFill" *ngIf="!status"></ng-icon>
+    </button>
+    <button class="font-bold rounded-full focus:outline-none hover:scale-90" (click)="skipTimer()">
+        <ng-icon class="text-4xl text-gray-100" name="bootstrapSkipForwardFill"></ng-icon>
+    </button>
+</div>

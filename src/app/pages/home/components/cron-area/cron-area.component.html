@@ -1,0 +1,20 @@
+<div class="h-full">
+    <nav class="bg-red-500 py-2 px-2 flex justify-between items-middle">
+        <h2 class="text-3xl font-bold text-gray-100">Pom</h2>
+        <button href="">
+            <ng-icon name="bootstrapGearFill" class="text-2xl text-gray-100"></ng-icon>
+        </button>
+    </nav>
+    <div class="flex justify-center h-5/6 my-10 md:m-0">
+        <div class="flex flex-col justify-center">
+            <app-toggle-button class="z-50"></app-toggle-button>
+            <div class="text-8xl font-bold my-2">
+                <p>{{timer * 1000 | date :'mm:ss'}}</p>
+            </div>
+            <div>
+                <app-timer-control></app-timer-control>
+            </div>
+        </div>
+    </div>
+
+</div>

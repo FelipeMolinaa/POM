@@ -1,0 +1,14 @@
+<div class="flex justify-center">
+    <button class="rounded text-4xl py-2 px-4 focus:outline-none focus:shadow-outline"
+        [ngClass]="{ 'background-transparent': isActivated('work') }" (click)="toggleButton(timersTypes.work)">
+        👩🏿‍💻
+    </button>
+    <button class="rounded text-4xl py-2 px-4 focus:outline-none focus:shadow-outline"
+        [ngClass]="{ 'background-transparent': isActivated('break')}" (click)="toggleButton(timersTypes.break)">
+        ☕
+    </button>
+    <button class="rounded text-4xl py-2 px-4 focus:outline-none focus:shadow-outline"
+        [ngClass]="{ 'background-transparent': isActivated('longBreak')}" (click)="toggleButton(timersTypes.longBreak)">
+        💤
+    </button>
+</div>
