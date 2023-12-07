@@ -1,5 +1,9 @@
-<div class="flex flex-col md:flex-row min-h-screen">
-
-    <app-cron-area class="basis-2/4 bg-red-400"></app-cron-area>
-    <div class="basis-2/4 bg-green-50">list</div>
+<div class="flex flex-col space-y-3 md:flex-row bg-red-400 overflow-hidden h-screen">
+    <app-cron-area class="basis-2/4"></app-cron-area>
+    <app-list-area class="basis-2/4 shadow-md drop-shadow-2xl overflow-y-auto"></app-list-area>
 </div>
+
+<button class="fixed bottom-8 right-8 bg-red-500 text-white font-bold h-20 w-20  rounded-full text-5xl 
+drop-shadow-md hover:bg-red-500/90">
+    +
+</button>

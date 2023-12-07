@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { bootstrapPauseFill, bootstrapSkipForwardFill, bootstrapPlayFill, bootstrapArrowClockwise, bootstrapGearFill } from "@ng-icons/bootstrap-icons"
+import { bootstrapPauseFill, bootstrapSkipForwardFill, bootstrapPlayFill, bootstrapArrowClockwise, bootstrapGearFill, bootstrapCheckCircleFill } from "@ng-icons/bootstrap-icons"
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
@@ -10,6 +10,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToggleButtonComponent } from './pages/home/components/cron-area/component/toggle-button/toggle-button.component';
 import { NgIconsModule } from '@ng-icons/core';
 import { TimerControlComponent } from './pages/home/components/cron-area/component/timer-control/timer-control.component';
+import { ListAreaComponent } from './pages/home/components/list-area/list-area.component';
+import { GoalItemComponent } from './pages/home/components/list-area/components/goal-item/goal-item.component';
 
 @NgModule({
     declarations: [
@@ -17,13 +19,15 @@ import { TimerControlComponent } from './pages/home/components/cron-area/compone
         HomeComponent,
         CronAreaComponent,
         ToggleButtonComponent,
-        TimerControlComponent
+        TimerControlComponent,
+        ListAreaComponent,
+        GoalItemComponent
     ],
     imports: [
         AppRoutingModule,
         BrowserModule,
         BrowserAnimationsModule,
-        NgIconsModule.withIcons({ bootstrapPauseFill, bootstrapSkipForwardFill, bootstrapPlayFill, bootstrapArrowClockwise, bootstrapGearFill }),
+        NgIconsModule.withIcons({ bootstrapPauseFill, bootstrapSkipForwardFill, bootstrapPlayFill, bootstrapArrowClockwise, bootstrapGearFill, bootstrapCheckCircleFill }),
     ],
     providers: [],
     bootstrap: [AppComponent]
