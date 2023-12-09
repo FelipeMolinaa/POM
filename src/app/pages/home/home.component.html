@@ -3,7 +3,14 @@
     <app-list-area class="basis-2/4 shadow-md drop-shadow-2xl overflow-y-auto"></app-list-area>
 </div>
 
-<button class="fixed bottom-8 right-8 bg-red-500 text-white font-bold h-20 w-20  rounded-full text-5xl 
-drop-shadow-md hover:bg-red-500/90">
-    +
-</button>
+<div class="fixed flex flex-col justify-center items-center bottom-8 right-6 space-y-1">
+    <button class="bg-red-500 text-white w-14 h-14 rounded-full text-5xl 
+    drop-shadow-lg hover:bg-red-500/70 flex justify-center items-center">
+        <ng-icon name="bootstrapTrashFill" size="25" class="text-gray-100"></ng-icon>
+    </button>
+
+    <button class="bg-red-500 text-white font-bold w-16 h-16 rounded-full text-5xl 
+    drop-shadow-lg hover:bg-red-500/50">
+        +
+    </button>
+</div>

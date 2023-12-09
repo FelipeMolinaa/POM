@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { bootstrapPauseFill, bootstrapSkipForwardFill, bootstrapPlayFill, bootstrapArrowClockwise, bootstrapGearFill, bootstrapCheckCircleFill } from "@ng-icons/bootstrap-icons"
+import { bootstrapPauseFill, bootstrapSkipForwardFill, bootstrapPlayFill, bootstrapArrowClockwise, bootstrapGearFill, bootstrapCheckCircleFill, bootstrapXCircleFill, bootstrapTrashFill } from "@ng-icons/bootstrap-icons"
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
@@ -27,7 +27,7 @@ import { GoalItemComponent } from './pages/home/components/list-area/components/
         AppRoutingModule,
         BrowserModule,
         BrowserAnimationsModule,
-        NgIconsModule.withIcons({ bootstrapPauseFill, bootstrapSkipForwardFill, bootstrapPlayFill, bootstrapArrowClockwise, bootstrapGearFill, bootstrapCheckCircleFill }),
+        NgIconsModule.withIcons({ bootstrapTrashFill, bootstrapXCircleFill, bootstrapPauseFill, bootstrapSkipForwardFill, bootstrapPlayFill, bootstrapArrowClockwise, bootstrapGearFill, bootstrapCheckCircleFill }),
     ],
     providers: [],
     bootstrap: [AppComponent]
