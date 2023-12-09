@@ -1,16 +1,13 @@
-<div class="flex flex-col space-y-3 md:flex-row bg-red-400 overflow-hidden h-screen">
+<div class="flex flex-col space-y-3 lg:flex-row bg-red-400 overflow-hidden h-screen">
     <app-cron-area class="basis-2/4"></app-cron-area>
     <app-list-area class="basis-2/4 shadow-md drop-shadow-2xl overflow-y-auto"></app-list-area>
 </div>
 
 <div class="fixed flex flex-col justify-center items-center bottom-8 right-6 space-y-1">
-    <button class="bg-red-500 text-white w-14 h-14 rounded-full text-5xl 
-    drop-shadow-lg hover:bg-red-500/70 flex justify-center items-center">
+    <button class="bg-red-500 text-white w-14 h-14 rounded-full text-5xl  
+    drop-shadow-lg hover:bg-red-500/70 flex justify-center items-center" ngxTippy="Limpar metas concluidas"
+        (click)="clearCompletedGoals()">
         <ng-icon name="bootstrapTrashFill" size="25" class="text-gray-100"></ng-icon>
     </button>
 
-    <button class="bg-red-500 text-white font-bold w-16 h-16 rounded-full text-5xl 
-    drop-shadow-lg hover:bg-red-500/50">
-        +
-    </button>
 </div>

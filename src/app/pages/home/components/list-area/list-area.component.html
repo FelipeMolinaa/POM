@@ -1,4 +1,7 @@
 <div class="flex-col space-y-1" style="height: fit-content">
+    <div *ngIf="!isCreatingGoal">
+        <app-add-update-goal-item [isCreatingGoal]="true"></app-add-update-goal-item>
+    </div>
     <div *ngFor="let item of goals">
         <app-goal-item [item]="item"></app-goal-item>
     </div>

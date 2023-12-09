@@ -1,0 +1,27 @@
+<div class="py-3 px-3 shadow-md mx-2 rounded-lg">
+    <p class="text-1xl font-medium text-gray-100" *ngIf="isCreatingGoal">Nova Meta:</p>
+    <div class="flex items-center justify-between">
+        <div class="flex items-center">
+            <ng-icon [name]="'bootstrapPlusCircleFill'" size="30"
+                [ngxTippy]="isCreatingGoal ? 'Criar meta' : 'Editar meta'"
+                class="text-gray-100 cursor-pointer me-2 hover:scale-110"
+                (click)="onCreateOrEditGoalClickHandle()"></ng-icon>
+            <input type="text" class="text-1xl rounded-md px-2 py-1" [(ngModel)]="name" placeholder="Nome da meta...">
+        </div>
+        <div class="flex items-center">
+            <div class="">
+                <div class="flex align-middle me-1">
+                    <input type="number" class="text-1xl w-10 rounded-md px-2 py-1" [(ngModel)]="completedActs"
+                        ngxTippy="Atos concluidos">
+                    <span class="text-2xl mx-1 text-white"> / </span>
+                    <input type="number" class="text-1xl w-10 rounded-md px-2 py-1" [(ngModel)]="totalActs"
+                        ngxTippy="Atos para concluir meta">
+                </div>
+            </div>
+            <ng-icon name="bootstrapTrashFill" size="24" *ngIf="!isCreatingGoal" (click)="deleteGoal()"
+                class=" hover:scale-110 text-gray-100 cursor-pointer me-2" ngxTippy="Excluir meta"></ng-icon>
+            <ng-icon name="bootstrapXCircleFill" size="24" *ngIf="!isCreatingGoal" (click)="cancelEdit()"
+                ngxTippy="Cancelar" class=" hover:scale-110 text-gray-100 cursor-pointer me-2"></ng-icon>
+        </div>
+    </div>
+</div>

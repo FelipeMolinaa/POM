@@ -1,13 +1,22 @@
-<div class="flex items-center justify-between py-3 px-3 shadow-md mx-2 rounded-lg">
+<div class="flex items-center justify-between py-3 px-3 shadow-md mx-2 rounded-lg"
+    *ngIf="!isEditableItem; else editableGoal">
     <div class="flex items-center">
-        <ng-icon [name]="item.completed ? 'bootstrapXCircleFill' : 'bootstrapCheckCircleFill'"
-            class="text-4xl text-gray-100 cursor-pointer me-2 hover:scale-110" (click)="setCompleted(item)"></ng-icon>
-        <h2 class="text-2xl font-medium text-gray-100" [ngClass]="item.completed ? 'line-through' : 'no-underline'">
-            {{item.name}}</h2>
+        <ng-icon [name]="item.completed ? 'bootstrapXCircleFill' : 'bootstrapCheckCircleFill'" size="30"
+            class="text-gray-100 cursor-pointer me-2 hover:scale-110"
+            [ngxTippy]="item.completed ? 'Desmarcar meta': 'Concluir meta'" (click)="setCompleted(item)"></ng-icon>
+        <p class="text-1xl font-medium text-gray-100" [ngClass]="item.completed ? 'line-through' : 'no-underline'">
+            {{item.name}}</p>
     </div>
     <div class="flex items-center">
-        <p class="text-1xl text-white me-2"><span class="text-3xl">{{item.completedActs}}</span>/{{item.totalActs}}
+        <p class="text-1xl text-white me-2">
+            <span class="text-2xl">{{item.completedActs}}</span>/{{item.totalActs}}
         </p>
-        <ng-icon name="bootstrapGearFill" class="text-2xl text-gray-100 cursor-pointer me-2"></ng-icon>
+        <ng-icon name="bootstrapGearFill" size="25" (click)="isEditableItem = true"
+            class=" text-gray-100 cursor-pointer me-2 hover:scale-110" ngxTippy="Editar meta"></ng-icon>
     </div>
 </div>
+
+<ng-template #editableGoal>
+    <app-add-update-goal-item [completedActs]="item.completedActs" [totalActs]="item.totalActs" [name]="item.name"
+        [id]="item.id" (cancelEditEvent)="isEditableItem = false"></app-add-update-goal-item>
+</ng-template>

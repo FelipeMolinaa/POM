@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ListControllService } from 'src/app/services/list-controll.service';
 
 @Component({
     selector: 'app-home',
@@ -7,4 +8,11 @@ import { Component } from '@angular/core';
 })
 export class HomeComponent {
 
+    constructor(
+        private readonly listControllService: ListControllService
+    ) { }
+
+    clearCompletedGoals() {
+        this.listControllService.deleteAllCompletedGoals();
+    }
 }

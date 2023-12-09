@@ -7,11 +7,13 @@ import { ListControllService, goalsItem } from 'src/app/services/list-controll.s
     styleUrls: ['./goal-item.component.sass']
 })
 export class GoalItemComponent {
+
     @Input() item!: goalsItem
+    isEditableItem = false;
 
-    constructor(private readonly listControllService: ListControllService) {
-
-    }
+    constructor(
+        private readonly listControllService: ListControllService
+    ) { }
 
     setCompleted(item: goalsItem) {
         item.completed = !item.completed

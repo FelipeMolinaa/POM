@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ListControllService } from 'src/app/services/list-controll.service';
+import { ListControllService, goalsItem } from 'src/app/services/list-controll.service';
 
 @Component({
     selector: 'app-list-area',
@@ -7,11 +7,18 @@ import { ListControllService } from 'src/app/services/list-controll.service';
     styleUrls: ['./list-area.component.sass']
 })
 export class ListAreaComponent implements OnInit {
-    goals = this.listControllService.getGoals();
 
-    constructor(private readonly listControllService: ListControllService) { }
+    goals: goalsItem[] = [];
+    isCreatingGoal: boolean = false;
+
+    constructor(
+        private readonly listControllService: ListControllService) { }
 
     ngOnInit(): void {
+        this.listControllService.getGoalsSubject().subscribe((goals) => {
+            this.goals = goals
+        })
+        this.listControllService.getGoals()
 
     }
 }

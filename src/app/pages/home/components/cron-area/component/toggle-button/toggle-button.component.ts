@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AudioService } from 'src/app/services/audio.service';
 import { TimerType, TimerTypeService } from 'src/app/services/timer-type.service';
 import { TimerService } from 'src/app/services/timer.service';
 
@@ -11,7 +12,10 @@ export class ToggleButtonComponent implements OnInit {
 
     timersTypes: any;
 
-    constructor(private readonly timerService: TimerService, private readonly timerTypeService: TimerTypeService) {
+    constructor(
+        private readonly timerService: TimerService,
+        private readonly timerTypeService: TimerTypeService,
+        private readonly audioService: AudioService) {
     }
 
     ngOnInit(): void {
@@ -30,6 +34,7 @@ export class ToggleButtonComponent implements OnInit {
     toggleButton(button: TimerType): void {
         this.activatedType = button
         this.timerTypeService.setTimerType(this.activatedType)
+        this.audioService.playClick();
     }
 
     isActivated(button: string): boolean {

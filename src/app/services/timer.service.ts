@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Subject, interval, takeUntil } from 'rxjs';
+import { AudioService } from './audio.service';
 
 @Injectable({
     providedIn: 'root'
@@ -13,14 +14,17 @@ export class TimerService {
     private contador = 25 * 60;
     private defaultTimer: number = 25 * 60;
 
-    constructor() {
+    constructor(private readonly audioService: AudioService) {
         this.iniciarContador();
     }
 
     private iniciarContador() {
         this.timerObservable
             .subscribe(() => {
-                if (this.status && this.contador > 0) {
+                if (this.contador == 0) {
+                    this.audioService.playClockOver()
+                }
+                else if (this.status && this.contador > 0) {
                     this.contador--;
                     this.timerSubject.next(this.contador);
                 }
