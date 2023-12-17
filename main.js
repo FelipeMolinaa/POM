@@ -1,16 +1,16 @@
-const {app, BrowserWindow} = require('electron');  
+const { app, BrowserWindow } = require('electron');
 const url = require('url');
-const path = require('path');   
-	
-function onReady () {     
-	win = new BrowserWindow({width: 900, height: 6700})    
-	win.loadURL(url.format({      
-		pathname: path.join(
-			__dirname,
-			'dist/o-pomodoro/index.html'),       
-		protocol: 'file:',      
-		slashes: true     
-	}))   
-} 
+const path = require('path');
+
+function onReady() {
+  win = new BrowserWindow({ width: 900, height: 900, icon: path.join(__dirname, 'src/assets/logo.png') })
+  win.loadURL(url.format({
+    pathname: path.join(
+      __dirname,
+      'dist/o-pomodoro/index.html'),
+    protocol: 'file:',
+    slashes: true,
+  }))
+}
 
 app.on('ready', onReady);
